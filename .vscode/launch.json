@@ -1,0 +1,56 @@
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Launch Master",
+      "cwd":"c:/work/testmssqlstoragecloud",
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "program": "c:/users/andri/AppData/roaming/npm/node_modules/allex/master.js"
+    },
+    {
+      "name": "AllexJS Attach",
+      "type": "node",
+      "request": "attach",
+      "processId": "${command:PickProcess}"
+    },
+    {
+      "name": "Basic Test",
+      "type": "node",
+      "request": "launch",
+      "cwd":"${workspaceFolder}/test",
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "windows": {
+        "program": "${env:APPDATA}/npm/node_modules/allextesting/commandline/allex-mocha",
+      },
+      "linux": {
+        "program": "${env:HOME}/lib/node_modules/allextesting/commandline/allex-mocha",
+      },
+      "args": ["test.basic.js"]
+    },
+    {
+      "name": "Test Indices",
+      "type": "node",
+      "request": "launch",
+      "cwd":"${workspaceFolder}/test",
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "windows": {
+        "program": "${env:APPDATA}/npm/node_modules/allextesting/commandline/allex-mocha",
+      },
+      "linux": {
+        "program": "${env:HOME}/lib/node_modules/allextesting/commandline/allex-mocha",
+      },
+      "args": ["test.indices.js"]
+    }
+  ]
+}
